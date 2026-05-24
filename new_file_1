@@ -1,3 +1,28 @@
-drdsgdg'fdg
-hello
-print "hello world"
+import turtle
+
+screen = turtle.Screen()
+screen.bgcolor("white")
+
+pen = turtle.Turtle()
+pen.speed(0)
+pen.color("blue")
+
+sizes = [20, 100, 60, 80, 100]
+
+for size in sizes:
+    pen.penup()
+    pen.goto(-200 + sizes.index(size) * 100, 100)
+    pen.pendown()
+    pen.circle(size)
+
+pen.color("red")
+
+for size in sizes:
+    pen.penup()
+    pen.goto(-200 + sizes.index(size) * 100, -100)
+    pen.pendown()
+    for _ in range(4):
+        pen.forward(size)
+        pen.right(90)
+
+screen.exitonclick()
